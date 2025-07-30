@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const Search = () => {
+  const [query, setQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    console.log("🔍 Search triggered with query:", query);
+    if (!query.trim()) return;
+
+    setLoading(true);
+    try {
+      const res = await axios.get(`http://localhost:5000/api/tmdb/search?q=${query}`);
+      console.log("📦 API response:", res.data);
+      setMovies(res.data.results || []);
+    } catch (err) {
+      console.error('🔴 Movie search failed:', err.message);
+      alert('Failed to fetch movies');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>🎬 Search Movies</h2>
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          placeholder="Search for a movie..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          style={{ padding: '8px', marginRight: '8px' }}
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <div style={{ marginTop: '20px' }}>
+        {loading ? (
+          <p>⏳ Loading...</p>
+        ) : movies.length > 0 ? (
+          movies.map((movie) => (
+            <div key={movie.id} style={{ marginBottom: '20px' }}>
+              <h4>{movie.title}</h4>
+              <p>{movie.overview}</p>
+              {movie.poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                  alt={movie.title}
+                  style={{ width: '100px' }}
+                />
+              ) : (
+                <p>No image available</p>
+              )}
+            </div>
+          ))
+        ) : (
+          <p>No results yet. Try searching!</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Search;
