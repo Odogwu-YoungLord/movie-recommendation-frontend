@@ -47,8 +47,8 @@ A fullstack web application that allows users to discover, search, and get perso
 
 ## 🌍 Live Demo
 
-Frontend: [https://your-frontend-site.netlify.app](https://your-frontend-site.netlify.app)  
-Backend: [https://your-backend-api.onrender.com](https://your-backend-api.onrender.com)
+Frontend: https://superlative-baklava-7c63d0.netlify.app/  
+Backend: https://movie-recommendation-backend-tj1n.onrender.com
 
 ---
 
