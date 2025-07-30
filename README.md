@@ -49,6 +49,18 @@ A fullstack web application that allows users to discover, search, and get perso
 
 Frontend: https://superlative-baklava-7c63d0.netlify.app/  
 Backend: https://movie-recommendation-backend-tj1n.onrender.com
+![movie-recommendation-App Search Page](https://github.com/user-attachments/assets/847cca7b-91d4-4d6c-acf4-d8705cc07158)
+
+![movie-recommendation-App Search Page 2](https://github.com/user-attachments/assets/9c66cf2f-4448-46c6-9185-c73f84e0b416)
+
+![movie-recommendation-App Search Page 3](https://github.com/user-attachments/assets/bd65b99b-7b10-4f88-a629-c100c6c10629)
+
+![movie-recommendation-App Register Page](https://github.com/user-attachments/assets/54185ef7-7e28-4bd8-b460-e64dd4d8216a)
+
+![movie-recommendation-App Login Page](https://github.com/user-attachments/assets/6c57fc3b-44c2-4e5d-8563-0afaa4a28eed)
+
+
+
 
 ---
 
